@@ -188,38 +188,38 @@ Set은 중복을 허용하지 않고, 순서에 상관하지 않는다. 출력�
 
 ## 정리
 0. 기본 생성자  
-    <constructor-arg> 태그를 쓰지 않았을 때 기본 생성자를 호출한다.  
+`<constructor-arg> 태그를 쓰지 않았을 때 기본 생성자를 호출한다.`
   
 1. param 1개짜리 생성자  
 객체를 값으로 쓰려면 ref로, value는 "문자열"이 값으로 바로 저장 될 것이다.  
-    <constructor-arg name="myclass" ref="myclass" />  
+`<constructor-arg name="myclass" ref="myclass" />`  
 name 태그 생략 가능. 인덱스 순서대로 처리 될 것이다.  
   
 2. SetXxx 호출  
-    <property name="xxx" ref="참조타입 객체">  
+`<property name="xxx" ref="참조타입 객체">`
   
 3. setDate 호출
-    <bean id="today" class="java.util.Date"></bean>
-    <!-- Date today = new Date(); -->
+`<bean id="today" class="java.util.Date"></bean>`
+    `<!-- Date today = new Date(); -->`
 
-    <bean id="end" class="java.util.Date">
-        <constructor-arg name="year" value="121" />
-        <constructor-arg name="month" value="6" />
-        <constructor-arg name="date" value="14" />
-    </bean>
+    `<bean id="end" class="java.util.Date">`
+        `<constructor-arg name="year" value="121" />`
+        `<constructor-arg name="month" value="6" />`
+        `<constructor-arg name="date" value="14" />`
+    `</bean>`
 
-    <!-- 위의 id가 today인 객체 가지고 호출하기. -->
-    <property name="date" ref="today" />
-    <!-- end라는 객체 호출하기 -->
-    <property name="today" ref="end" />  
-
+    `<!-- 위의 id가 today인 객체 가지고 호출하기. -->`
+    `<property name="date" ref="today" />`
+    `<!-- end라는 객체 호출하기 -->`
+    `<property name="today" ref="end" />` 
+    
 4. setNumber 호출
-    <property name="number">
-        <!-- int로 묵시적 형변환 됐다. -->
-        <value type="short">
-        100
-        </value>
-    </property>
+	`<property name="number">`
+	`<!-- int로 묵시적 형변환 됐다. -->`
+        `<value type="short">`
+        `100`
+        `</value>`
+	`</property>`
   
 5. Collection
 Array, List, Set, Map  
