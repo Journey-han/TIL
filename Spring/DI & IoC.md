@@ -198,33 +198,34 @@ name 태그 생략 가능. 인덱스 순서대로 처리 될 것이다.
 2. SetXxx 호출  
 `<property name="xxx" ref="참조타입 객체">`
   
-3. setDate 호출
-`<bean id="today" class="java.util.Date"></bean>`
-    `<!-- Date today = new Date(); -->`
+3. setDate 호출  
+	<bean id="today" class="java.util.Date"></bean>
+	<!-- Date today = new Date(); -->
+	
+	<bean id="end" class="java.util.Date">
+		<constructor-arg name="year" value="121" />
+		<constructor-arg name="month" value="6" />
+		<constructor-arg name="date" value="14" />
+	</bean>
 
-    `<bean id="end" class="java.util.Date">`
-        `<constructor-arg name="year" value="121" />`
-        `<constructor-arg name="month" value="6" />`
-        `<constructor-arg name="date" value="14" />`
-    `</bean>`
+	<!-- 위의 id가 today인 객체 가지고 호출하기. -->
+	<property name="date" ref="today" />
 
-    `<!-- 위의 id가 today인 객체 가지고 호출하기. -->`
-    `<property name="date" ref="today" />`
-    `<!-- end라는 객체 호출하기 -->`
-    `<property name="today" ref="end" />` 
+	<!-- end라는 객체 호출하기 -->
+	<property name="today" ref="end" />
     
-4. setNumber 호출
-	`<property name="number">`
-	`<!-- int로 묵시적 형변환 됐다. -->`
-        `<value type="short">`
-        `100`
-        `</value>`
-	`</property>`
+4. setNumber 호출  
+	<property name="number">
+		<!-- int로 묵시적 형변환 됐다. -->
+		<value type="short">
+		100
+		</value>
+	</property>
   
-5. Collection
+5. Collection  
 Array, List, Set, Map  
   
-6. inner bean
+6. inner bean  
   
 <p>  
 # IoC Container
