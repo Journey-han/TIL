@@ -96,7 +96,137 @@
 	<bean id="shin" class="com.test05.Emp" p:name="신짱구" p:salary="2500000" />
 	<bean id="shin-zg" class="com.test05.Engineer" p:emp-ref="shin" p:dept="기술팀" />
 
+## 컬렉션 생성과 목록 DI
+### setArray(String[] arr) 호출
+Array배열 태그 안에 자식 요소를 넣을 수 있다.  
+An array can contain multiple inner bean, fef, collection or value elements.
 
+    public void setArray(String[] arr) {
+        for (String s : arr) {
+            System.out.println(s);
+        }
+    }
+
+    <property name="array">
+        <array>
+            <value>이둘리</value>
+            <value>신짱구</value>
+            <value>김또치</value>
+        </array>
+    </property>
+
+### setList(List<String> list) 호출
+
+    <property name="list">
+        <list>
+            <value>봄</value>
+            <value>여름</value>
+            <value>가을</value>
+            <value>겨울</value>
+        </list>
+    </property>
+
+
+### setSet(Set<String> set) 호출
+Set은 중복을 허용하지 않고, 순서에 상관하지 않는다. 출력결과 1, 2, 3 만 출력된다.
+
+    <property name="set">
+        <set>
+            <value>1</value>
+            <value>1</value>
+            <value>2</value>
+            <value>2</value>
+            <value>3</value>
+        <set>
+    </property>
+
+### setMap(Map<Integer, String> map) 호출
+<entry>속성 안에 <key>와 <value>를 따로 지정해줘야하는 번거로움(심지어 <key><value></value></key> 형태...)이 많기 때문에 key, value를 한 줄에 쓸 수 있는 코드로 쓰도록 한다.
+
+    <property name="set">
+        <map>
+            <entry>
+                <key>
+                    <value>1</value>
+                <key>
+                <value>봄</value>
+            </entry>
+            <entry>
+                <key>
+                    <value>2</value>
+                </key>
+                <value>여름</value>
+            </entry>
+            <!-- 위의 코드가 너무 보기 싫다. -->
+
+            <entry key="3" value="가을"></entry>
+            <entry key="4" value="겨울"></entry>
+        </map>
+    </property>
+
+### inner bean 만들기.
+
+    <property name="score">
+        <list>
+            <bean class="com.test01.Score>
+                <property name="name" value="신짱구" />
+                <property name="kor" value="100" />
+                <property name="eng" value="100" />
+                <property name="math" value="100" />
+            </bean>
+            <!--  아래 이둘리의 객체 땡겨와서 호출 할 수 있다. -->
+            <ref bean="lee">
+        </list>
+    </property>
+
+    <bean id="lee" class="com.test01.Score">
+        <constructor-arg value="이둘리" />
+        <constructor-arg value="100" />
+        <constructor-arg value="100" />
+        <constructor-arg value="100" />
+    </bean>
+
+## 정리
+0. 기본 생성자  
+<constructor-arg> 태그를 쓰지 않았을 때 기본 생성자를 호출한다.  
+  
+1. param 1개짜리 생성자  
+객체를 값으로 쓰려면 ref로, value는 "문자열"이 값으로 바로 저장 될 것이다.  
+<constructor-arg name="myclass" ref="myclass" />  
+name 태그 생략 가능. 인덱스 순서대로 처리 될 것이다.  
+  
+2. SetXxx 호출  
+<property name="xxx" ref="참조타입 객체">  
+  
+3. setDate 호출
+	<bean id="today" class="java.util.Date"></bean>
+	<!-- Date today = new Date(); -->
+
+	<bean id="end" class="java.util.Date">
+		<constructor-arg name="year" value="121" />
+		<constructor-arg name="month" value="6" />
+		<constructor-arg name="date" value="14" />
+	</bean>
+
+    <!-- 위의 id가 today인 객체 가지고 호출하기. -->
+    <property name="date" ref="today" />
+    <!-- end라는 객체 호출하기 -->
+    <property name="today" ref="end" />  
+  
+4. setNumber 호출
+    <property name="number">
+		<!-- int로 묵시적 형변환 됐다. -->
+		<value type="short">
+			100
+		</value>
+	</property>
+  
+5. Collection
+Array, List, Set, Map  
+  
+6. inner bean
+  
+<p>  
 # IoC Container
 IoC 기능을 제공하는 컨테이너.
 Bean을 구성하고 담고 있다. 
@@ -133,3 +263,4 @@ xml파일 지시서를 넘길 때 xml 위치를 application root로 넘길 때 �
     	System.out.println(lee);
     	System.out.println(shin);
     }
+
