@@ -2,11 +2,13 @@
 종속 객체를 생성 조립해주는 도구
 
 # DI
-**Dependency Injection. 약결합**  
-조립형. 느슨한 결합. 의존 주입. 값 넣어주기. 
-**객체간의 결합을 느슨하게 하는 스프링의 핵심 기술, 주입기능**
+**Dependency Injection**  
+조립형. 느슨한 결합. 의존 주입. 값 넣어주기.  
+**객체간의 결합을 느슨하게 하는 스프링의 핵심 기술, 주입기능**  
 
 ### 의존 객체를 주입하는 방식
+Construction Injection / Setter Injection / Field Injection  
+  
 1. Setter를 이용한 의존 주입
 
        B b = new B();	// Dependency
@@ -227,6 +229,7 @@ Array, List, Set, Map
 6. inner bean
   
 <p>  
+
 # IoC Container
 IoC 기능을 제공하는 컨테이너.
 Bean을 구성하고 담고 있다. 
