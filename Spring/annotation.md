@@ -26,7 +26,7 @@ HandlerMapping, HandlerAdapter를 등록하여 @Controller에 요청 연결.
 1. @Component  
 패키지	: org.springframework.streotyp    
 버전	: spring 2.5  
-클래스에 선언하여 해당 클래스를 자동으로 bean 등록.    
+클래스에 선언하여 해당 클래스를 자동으로 bean 등록. 객체화.    
 bean의 이름은 해당 클래스의 이름(첫글자 소문자)  
 범위는 default로 singleton. @Scope로 지정 가능  
   
@@ -73,3 +73,7 @@ dao에 사용되며 Exception을 DataAccessException으로 변환한다.
 어플리케이션에서 필요로 하는 자원을 자동 연결할 대 사용한다.  
 name 속성에 자동으로 연결될 빈 객체의 이름으로 입력한다.  
 @Resource(name="testDao")	// byName -> byType  
+
+
+# 어노테이션을 이용할 때의 장점
+
