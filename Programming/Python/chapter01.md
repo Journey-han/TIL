@@ -8,9 +8,9 @@
 - 범용 언어(네트워크, 웹, 데이터분석, 기계학습 등)  
    
 ## 기본 출력
-    print('출력문')
-
-타 언어와 다르게 들여쓰기를 안하면 출력과정에서 에러가 난다. indent
+    print('출력문')  
+  
+타 언어와 다르게 들여쓰기를 안하면 출력과정에서 에러가 난다. indent  
 
 vscode에 task 설정을 해 두면 편하게 콘솔에 출력 가능하다. 
-vscode Run task로 실행시 단축키 ctrl+shift+b
+vscode Run task로 실행시 단축키 ctrl+shift+b  
