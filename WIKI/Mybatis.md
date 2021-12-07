@@ -7,7 +7,7 @@ mapper의 namespace 속성은 java의 package 처럼 여러개의 SQL문을 하�
 `resultMap` - SELECT문 실행결과를 담는 객체를 resultMap으로 지정. `<resultMap>`을 별도로 선언해줘야 한다. resultType과 resultMap 중 하나를 결정해서 사용해야 한다.    
 `parameterType` - 지정한 객체 property값이 SQL문의 입력 parameter로 지정한다.    
     
-### resultMap & <resultMap>    
+### resultMap & `<resultMap>`    
 resultType을 사용하는 경우 → setter와 매칭이 되지 않는 경우 각 column마다 alias를 붙여줘야하는 번거로움이 존재    
 resultMap 속성을 사용하면 해당 문제를 해결 가능    
 `<resultMap>` tag를 사용함으로 각 column과 매칭되는 setter method를 지정할 수 있다.    
