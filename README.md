@@ -11,42 +11,42 @@ ex) `21.04.20 docs: Edit README.md to include New Rules`
 - 커밋을 위한 커밋, TIL을 위한 TIL에 집착하지 않는다. 양질의 커밋을 지향.  
   
 ### Type  
-- ***feat***: 새로운 기능을 추가할 경우  
-- ***fix***: 버그를 고친 경우  
-- ***docs***: 문서를 수정한 경우  
-- ***refactor***: 코드 리팩토링
+- feat: 새로운 기능을 추가할 경우  
+- fix: 버그를 고친 경우  
+- docs: 문서를 수정한 경우  
+- refactor: 코드 리팩토링
   
 ## Categories
-***Computer Science***    
+**_Computer Science_**    
 전산학 CS 지식   
     
-[자료구조](Journey-han/TIL/Computer Science/Data Structure)  
-[알고리즘](Journey-han/TIL/Computer Science/Alogorithm)  
-[운영체제](Journey-han/TIL/Computer Science/Operating System)  
-[UNIX](Journey-han/TIL/Computer Science/UNIX)  
+[자료구조](Computer%20Science/Data%20Structure)  
+[알고리즘](Computer%20Science/Alogorithm)  
+[운영체제](Computer%20Science/Operating%20System)  
+[UNIX](Computer%20Science/UNIX)  
   
-***Programming***   
+**_Programming_**   
 프로그래밍 언어 
     
-[Java](Journey-han/TIL/Programming/JAVA)  
-[Javascript](Journey-han/TIL/Programming/JavaScript)  
-[Python](Journey-han/TIL/Programming/Python)  
+[Java](Programming/JAVA)  
+[Javascript](Programming/JavaScript)  
+[Python](Programming/Python)  
   
-***Server***    
+**_Server_**    
 웹 개발 back-end  
     
-[Spring](Journey-han/TIL/Server/Spring)  
-[Django](Journey-han/TIL/Server/Django)  
-[Flask](Journey-han/TIL/Server/Flask)  
+[Spring](Server/Spring)  
+[Django](Server/Django)  
+[Flask](Server/Flask)  
   
-***Web***    
+**_Web_**    
 웹 개발 front-end  
     
-***Problem Solving***    
+**_Problem Solving_**    
 알고리즘 문제 풀이  
     
-***Etc***    
+**_Etc_**    
 개발 관련 및 자격증  
      
-***WIKI***
+**_WIKI_**
 엔지니어링 위키   
