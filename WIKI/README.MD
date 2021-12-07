@@ -1,1 +1,1 @@
-- [MyBatis](WIKI/Mybatis.md)
+- [MyBatis](Mybatis.md)
