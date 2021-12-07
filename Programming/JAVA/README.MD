@@ -1,1 +1,1 @@
-- [객체지향](Programming/JAVA/Object%20Oriented-programming)
+- [객체지향](Object%20Oriented-programming)
