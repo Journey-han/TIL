@@ -1,6 +1,5 @@
 # ProblemSolving
-코딩테스트 및 알고리즘 사고력 향상을 위해 문제 풀이 후 커밋합니다.   
-My Code = Stack Overflow + Github 껄껄...    
+코딩테스트 및 알고리즘 사고력 향상을 위해 문제 풀이 후 커밋합니다.  My Code = Stack Overflow + Github 껄껄...    
 
 ## Programming Language & IDE
 - Java(main), Javascript, Python
