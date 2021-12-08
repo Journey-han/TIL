@@ -6,7 +6,7 @@
 ## Commit Guide  
 - 폴더와 파일명은 되록이면 영문으로 작성하며, 문서의 제목은 50자를 넘기지 않도록 유의한다.    
 - 제목은 타입(Type)라벨을 맨 앞에 붙여 `타입(Type): 제목` 형식으로 작성.  
-ex) `21.04.20 docs: Edit README.md to include New Rules`  
+ex) `210420 docs: Edit README.md to include New Rules`  
 - 해당 문서를 다시 봤을 때, 추가적인 검색의 비용이 들지 않도록 자세히 기록한다.  
 - 커밋을 위한 커밋, TIL을 위한 TIL에 집착하지 않는다. 양질의 커밋을 지향.  
   
@@ -17,13 +17,13 @@ ex) `21.04.20 docs: Edit README.md to include New Rules`
 - refactor: 코드 리팩토링
   
 ## Categories
-**_Computer Science_**    
+**_ComputerScience_**    
 전산학 CS 지식   
     
-[자료구조](Computer%20Science/Data%20Structure)  
-[알고리즘](Computer%20Science/Alogorithm)  
-[운영체제](Computer%20Science/Operating%20System)  
-[UNIX](Computer%20Science/UNIX)  
+[자료구조](ComputerScience/DataStructure)  
+[알고리즘](ComputerScience/Alogorithm)  
+[운영체제](ComputerScience/OperatingSystem)  
+[UNIX](ComputerScience/UNIX)  
   
 **_Programming_**   
 프로그래밍 언어 
@@ -42,11 +42,15 @@ ex) `21.04.20 docs: Edit README.md to include New Rules`
 **_Web_**    
 웹 개발 front-end  
     
-**_Problem Solving_**    
+**_ProblemSolving_**    
 알고리즘 문제 풀이  
     
 **_Etc_**    
 개발 관련 및 자격증  
+
+[Infrastructure](ETC/Infrastructure)
+[Tool](ETC/Tool)
+[ForMyStudy](ETC/ForMyStudy)
      
 **_WIKI_**    
 엔지니어링 위키   
