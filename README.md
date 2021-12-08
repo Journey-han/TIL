@@ -48,9 +48,9 @@ ex) `210420 docs: Edit README.md to include New Rules`
 **_Etc_**    
 개발 관련 및 자격증  
 
-[Infrastructure](ETC/Infrastructure)
-[Tool](ETC/Tool)
-[ForMyStudy](ETC/ForMyStudy)
+[Infrastructure](ETC/Infrastructure)    
+[Tool](ETC/Tool)    
+[ForMyStudy](ETC/ForMyStudy)    
      
 **_WIKI_**    
 엔지니어링 위키   
