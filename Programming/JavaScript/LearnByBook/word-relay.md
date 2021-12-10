@@ -116,18 +116,20 @@ const 리스너함수 = (event) => {
 ## 순서도 최적화 하기
 여러 개의 if문을 하나로 합치려면 진리표를 이용한다. 두 if 문의 관계가 OR(||, 또는) 인지 AND(&&, 그리고)인지에 따라 진리표가 달라진다.    
 
-- **OR 관계**    
+- **OR 관계**   
+     
 |First|Second|Result|
 |:-:|:-:|:-:|
 |true|true|true|
 |true|false|true|
 |false|true|true|
-|false|fale|false|
+|false|false|false|
     
 - **AND 관계**    
+    
 |First|Second|Result|
 |:-:|:-:|:-:|
 |true|true|true|
 |true|false|false|
 |false|true|false|
-|false|fale|false|
+|false|false|false|
