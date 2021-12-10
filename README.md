@@ -24,6 +24,7 @@ ex) `210420 docs: Edit README.md to include New Rules`
 [알고리즘](ComputerScience/Alogorithm)  
 [운영체제](ComputerScience/OperatingSystem)  
 [UNIX](ComputerScience/UNIX)  
+[Software Archive](ComputerScience/SoftwareArchive)
   
 **_Programming_**   
 프로그래밍 언어 
@@ -46,9 +47,8 @@ ex) `210420 docs: Edit README.md to include New Rules`
 알고리즘 문제 풀이  
     
 **_Etc_**    
-개발 관련 및 자격증  
-
-[Infrastructure](ETC/Infrastructure)    
+개발 관련 툴 및 개인 공부
+   
 [Tool](ETC/Tool)    
 [ForMyStudy](ETC/ForMyStudy)    
      
