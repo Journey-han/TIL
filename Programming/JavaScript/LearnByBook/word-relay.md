@@ -88,8 +88,8 @@ $input.addEventListener('input', onInput);
 '선택자 내부선택자 내부선택자...' -> 어떤 태그 안에 들어 있는 다른 태그를 선택하고 싶을 때    
     
 ### 태그에 이벤트 달기
-- . 태그를 선택한 후에 addEventListener 메서드를 사용해서 이벤트를 연결한다. 리스너 함수는 이벤트가 발생할 때 실행되는 함수.     
-    - `태그.addEventListener('이벤트 이름', '리스터함수');`    
+- 태그를 선택한 후에 addEventListener 메서드를 사용해서 이벤트를 연결한다. 리스너 함수는 이벤트가 발생할 때 실행되는 함수.     
+    - `태그.addEventListener('이벤트 이름', '리스너함수');`    
     
 - 리스너 함수의 매개변수로 event 객체를 제공해서 이벤트와 관련된 정보를 얻을 수 있다.     
     - 예) input 태그에 입력된 값을 가져오기. -> `event.target.value`를 넣는다. event.target은 이벤트가 발생한 대상 태그.    
@@ -118,7 +118,7 @@ const 리스너함수 = (event) => {
 
 - **OR 관계**    
 |First|Second|Result|
-|---|---|---|
+|:-:|:-:|:-:|
 |true|true|true|
 |true|false|true|
 |false|true|true|
@@ -126,7 +126,7 @@ const 리스너함수 = (event) => {
     
 - **AND 관계**    
 |First|Second|Result|
-|---|---|---|
+|:-:|:-:|:-:|
 |true|true|true|
 |true|false|false|
 |false|true|false|
