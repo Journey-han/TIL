@@ -25,6 +25,7 @@ ex) `210420 docs: Edit README.md to include New Rules`
 [운영체제](ComputerScience/OperatingSystem)  
 [UNIX](ComputerScience/UNIX)  
 [Software Archive](ComputerScience/SoftwareArchive)
+[Design Patterns](ComputerScience/DesignPatterns)
   
 **_Programming_**   
 프로그래밍 언어 
