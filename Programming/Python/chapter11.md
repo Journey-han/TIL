@@ -2,67 +2,75 @@
 # 파이썬 외부 파일 처리
  ## Excel, CSV 처리
 ### CSV 읽기
-CSV : MIME - text.csv
-csv 기본 구분자 ,(콤마)
-`import csv`
+- CSV : MIME - text.csv
+- csv 기본 구분자 ,(콤마) `import csv`
 
 - 예제1
 
-		with open('./resource/sample1.csv', 'r') as f:
-			reader = csv.reader(f)
-			# next(reader) Header 스킵. 1열 스킵
+```python
+with open('./resource/sample1.csv', 'r') as f:
+	reader = csv.reader(f)
+	# next(reader) Header 스킵. 1열 스킵
 
-			# 확인
-			print(reader)
-			print(type(reader))
-			print(dir(reader))
-			# 출력 결과에 __iter__가 있으면 반복문에서 사용할 수 있다.
+	# 확인
+	print(reader)
+	print(type(reader))
+	print(dir(reader))
+	# 출력 결과에 __iter__가 있으면 반복문에서 사용할 수 있다.
 
-			for c in reader:
-				print(c)
+	for c in reader:
+		print(c)
+```
 
 - 예제2
 
-		with open('./resource/sample2.csv', 'r') as f:
-			reader = csv.reader(f, delimiter='|')
+```python
+with open('./resource/sample2.csv', 'r') as f:
+	reader = csv.reader(f, delimiter='|')
 
-			# 확인
-			print(reader)
-			print(type(reader))
-			print(dir(reader))
-			# 출력 결과에 __iter__가 있으면 반복문에서 사용할 수 있다.
+	# 확인
+	print(reader)
+	print(type(reader))
+	print(dir(reader))
+	# 출력 결과에 __iter__가 있으면 반복문에서 사용할 수 있다.
 
-			for c in reader:
-				print(c)
+	for c in reader:
+		print(c)
+```
 
 - 예제3 (Dict 변환)
 
-		with open('./resource/sample1.csv', 'r') as f:
-			reader = csv.DictReader(f)
+```python
+with open('./resource/sample1.csv', 'r') as f:
+	reader = csv.DictReader(f)
 
-			for c in reader:
-				for k, v in c.items():
-					print(k, v)
+		for c in reader:
+		for k, v in c.items():
+			print(k, v)
+```
 
 ### CSV 쓰기
 - 예제4
 
-		w = [[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15],[16,17,18]]
+```python
+w = [[1,2,3],[4,5,6],[7,8,9],[10,11,12],[13,14,15],[16,17,18]]
 
-		with open('./resource/sample3.csv', 'w', newline='') as f:
-			wt = csv.writer(f)
+with open('./resource/sample3.csv', 'w', newline='') as f:
+	wt = csv.writer(f)
 			
-			for v in w:
-				wt.writerow(v)
-				# 한줄한줄 검수해서 쓸 때는 writerow()
+	for v in w:
+		wt.writerow(v)
+		# 한줄한줄 검수해서 쓸 때는 writerow()
+```
 
 - 예제5
 
-		with open('./resource/sample4.csv', 'w', newline='') as f:
-			wt = csv.writer(f)
-			wt.writerows(w)
-			# 이미 검증이 끝나서 다 쓰면 된다 하면 writerows()
-
+```python
+with open('./resource/sample4.csv', 'w', newline='') as f:
+	wt = csv.writer(f)
+	wt.writerows(w)
+	# 이미 검증이 끝나서 다 쓰면 된다 하면 writerows()
+```
   
 
 ### XSL, XLSX 읽기
