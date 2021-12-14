@@ -74,13 +74,16 @@ with open('./resource/sample4.csv', 'w', newline='') as f:
   
 
 ### XSL, XLSX 읽기
-pandas excel
-openpyxl, xlsxwriter, xlrd, xlwt, xlutils
-pandas를 주로 사용(openpyxl, xlrd)
-pip install xlrd
-pip install openpyxl
-pip install pandas
 
+
+> pandas excel 
+	openpyxl, xlsxwriter, xlrd, xlwt, xlutils
+	pandas를 주로 사용(openpyxl, xlrd)
+	pip install xlrd
+	pip install openpyxl
+	pip install pandas
+
+```python
 	import pandas as pd
 		
 	# sheetname = '시트명' 또는 숫자, header=숫자, skiprow=숫자
@@ -94,8 +97,7 @@ pip install pandas
 
 	# 데이터 확인
 	print(xlsx.shape) # 행, 열
-
-  
+```
 
 ### 다시 쓰기
 - 엑셀 or csv 다시 쓰기
