@@ -24,7 +24,7 @@ ex) `210420 docs: Edit README.md to include New Rules`
 [알고리즘](ComputerScience/Alogorithm)  
 [운영체제](ComputerScience/OperatingSystem)  
 [UNIX](ComputerScience/UNIX)  
-[Software Archive](ComputerScience/SoftwareArchive)
+[Software Archive](ComputerScience/SoftwareArchive)    
 [Design Patterns](ComputerScience/DesignPatterns)
   
 **_Programming_**   
