@@ -2,7 +2,7 @@
 
 |First Image|Second Image|
 |:-:|:-:|
-|![First Image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/692ebeb4-0913-4d68-adff-778d0341289c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T085806Z&X-Amz-Expires=86400&X-Amz-Signature=fe29e89f1468d919e0297b0c9db0a5dbc0824e02d651f4d3153ed4d3906099b4&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)|![Second Image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dcf070a1-3d3e-4b6c-b1e5-4ff111a80c7d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T085823Z&X-Amz-Expires=86400&X-Amz-Signature=f2482c658b9cd9e96c18795bc92dc330c9a301b2911339127482fe8d19ea6370&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)|
+|![First Image](https://t1.daumcdn.net/cafeattach/1Dzpp/774970b96f2f3f63f138154805bd43303cb832fa)|![Second Image](https://t1.daumcdn.net/cafeattach/1Dzpp/95ad9db5376f1fecd20dc4b8fdeb8b7558148bee)|
 
 
 ## INNER JOIN
@@ -11,7 +11,7 @@
 
 ### TEST 테이블
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/965fda5c-2d09-4b30-b71e-9cbfde2b8b21/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T085856Z&X-Amz-Expires=86400&X-Amz-Signature=862a81e57038e3e4c1e98f2d50f1d2fc7f3924da848bfbaffb2ce31c8853387d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled](https://t1.daumcdn.net/cafeattach/1Dzpp/ff83046801af6755b0ed0292dd8995d7463d795e)
 
 ```sql
 SELECT * FROM 
@@ -30,7 +30,7 @@ T.a_char IN (
 
 ### TEST2 테이블
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/dd06de34-6ba6-45bc-a29a-1988416e9611/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T085910Z&X-Amz-Expires=86400&X-Amz-Signature=03ed554084dea850154217eb29191bd15c79c1c7b0a8e423076d451cba6a411a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled](https://t1.daumcdn.net/cafeattach/1Dzpp/f4c6b432ed6f44b9d24edf358a37c71805503844)
 
 ```sql
 SELECT * FROM 
@@ -49,7 +49,7 @@ T.a_char IN (
 
 |First Image|Second Image|Third Image|
 |:-:|:-:|:-:|
-|![First Image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/41b466f8-bacc-4ff4-816b-d7ffd2e061d6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T085938Z&X-Amz-Expires=86400&X-Amz-Signature=82b9e7ca7372a42b599f5797e3ace687a9259587192d801370b012f3fc96bb0b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)|![Second Image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/da2bebbc-8128-44fc-8194-d9eb795256a0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T085948Z&X-Amz-Expires=86400&X-Amz-Signature=9c7034453717f6378f6c8227e373ca7aa966c6e1b8fd5b958ff95ea4f4b8c58f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)|![Third Image](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/736cea6b-d519-4dc0-bac2-a3a70ee7713e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T090003Z&X-Amz-Expires=86400&X-Amz-Signature=8c66103e4ea13531d174de686b74d6b626f63b31b7cf243308549d8733c195b7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)|
+|![First Image](https://t1.daumcdn.net/cafeattach/1Dzpp/5fe3437f9e7c3ef93ac20a65e684a715f52de3a8)|![Second Image](https://t1.daumcdn.net/cafeattach/1Dzpp/071752e8945389af782d9633b222f345acd48a07)|![Third Image](https://t1.daumcdn.net/cafeattach/1Dzpp/89b6612d35a27955523fa2ba0eb7e0dbf5e3bb62)|
 
 ## 합계값으로 JOIN
 
@@ -261,7 +261,7 @@ AS bf_a_char FROM TEST2 t2
 
 ### TEST3 테이블
 
-![Untitled](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5b4c71d4-edbb-4974-82d2-c81f0baffbba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211208%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211208T090118Z&X-Amz-Expires=86400&X-Amz-Signature=a2a9bd5c88413a4a82a18c9e0979fa7b56e48e5156c883e3f4427adadf02c0f2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+![Untitled](https://t1.daumcdn.net/cafeattach/1Dzpp/0e739ed139e6f497a79b75c9ca85da6a68eec7a9)
 
 **재귀** : 원래의 자리로 되돌아가거나 되돌아옴 → 같은 걸 반복한다고 생각하면 쉽다.
 
