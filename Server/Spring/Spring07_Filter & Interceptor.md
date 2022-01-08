@@ -37,19 +37,17 @@ web.xml 에서 필터 설정하기.
 - 특정 자원에 대해서 어떤 필터를 사용할지 지정()
 - 필터 초기화 될 때 init() 메소드가 호출될 때 전달되는 파라미터 값. 주로 필터를 사용하기 전에 초기화해야하는 객체나 자원을 할당할 때 필요한 정보를 제공하기 위해 사용
 - 클라이언트가 요청한 특정 URI에 대해서 필터링 할 때 사용. 
-    '/'로 시작하고 '/*'로 끝나는 url-pattern은 경로 매핑 시 사용
-    '*'로 시작하는 url-pattern은 확장자에 대한 매핑 시 사용
+    - '/'로 시작하고 '/*'로 끝나는 url-pattern은 경로 매핑 시 사용
+    - '*'로 시작하는 url-pattern은 확장자에 대한 매핑 시 사용
 
 ## 쓰임
 필터는 주로 요청에 대한 인증, 권한 체크 등을 하는데에 쓰인다. 구체적으로 들어온 요청이 DispatcherServlet에 전달되기 전에 헤더를 검사해 인증 토큰이 있는지 없는지, 올바른지 올바르지 않은지 등을 검사할 수 있을 것.
 
 
-
 # Interceptor
-Spring Framework에서 자체적으로 제공하는 기능. dispatcher servlet이 읽는 설정파일에 interceptor를 설정해야한다.
+- Spring Framework에서 자체적으로 제공하는 기능. dispatcher servlet이 읽는 설정파일에 interceptor를 설정해야한다.
 - servlet-context.xml 또는 dispatcher-servlet.xml에 interceptor를 등록
-
-HandlerInterceptoreAdapter를 상속받아서 custom한 interceptor를 작성
+- HandlerInterceptoreAdapter를 상속받아서 custom한 interceptor를 작성
 
 **preHandle** : DS -> C 넘어갈때 필요한 핸들러 매핑을 interceptor 해준다. 내가 원하는 대로 다른 컨트롤러로 전달.
 Controller의 메소드를 실행하기 전 처리. 세션 검증에 많이 사용.
