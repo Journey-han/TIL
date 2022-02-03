@@ -91,7 +91,7 @@
 > - 한개의 엔티티는 **두개 이상**의 속성을 가짐     
 > - 한개의 속성은 **한개**의 속성값을 가짐
 
-![Entity](./resources/image/entity.jpg)
+![Entity](/resources/image/entity.jpg)
 
 ### 2. 분류
 - 특성에 따른 분류
