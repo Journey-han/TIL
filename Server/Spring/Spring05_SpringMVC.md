@@ -31,7 +31,7 @@
     - 컨트롤러의 처리결과를 생성할 뷰를 결정.
 
 ### 흐름  
-![Spring MVC flow](./resources/image/Spring MVC flow.jpg)  
+![Spring MVC flow](/resources/image/Spring%20MVC%20flow.jpg)  
 1. 브라우저가 요청을 DispatcherServlet으로 보내고 HandlerMapping에 가장 적합한 컨트롤러를 찾아서 선택해준다.   
 2. 다시 DS에 와서 HandlerAdapter로 요청해서, 컨트롤러의 많은 메서드중에 요청을 처리할 수 있는 가장 적합한 메서드를 찾아준다. (dao, service 등 데이터가 가공되서 나온다)  
 3. 컨트롤러에 요청해서 로직 수행.  
