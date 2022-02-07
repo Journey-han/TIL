@@ -140,8 +140,9 @@ CREATE TABLE T2
     - _ORACLE_ : ' || ', _SQL SERVER_ : ' + '
 
 
-### 4절 TCL (트랜잭션 제어어)
-1. 트랜잭션 : DB의 논리적 연산 단위. 하나 이상의 SQL문을 포함
+## 4절. TCL (트랜잭션 제어어)
+### 1. 트랜잭션
+: DB의 논리적 연산 단위. 하나 이상의 SQL문을 포함       
 - 트랜잭션의 특징 **'ACID'**
     - 원자성(**A**tomicity) : All OR Nothing
     - 일관성(**C**onsistency) : 트랜잭성으로 인한 데이터베이스 상태의 모순이 없음
@@ -149,13 +150,12 @@ CREATE TABLE T2
     - 영속성(**D**urability) : 트랜잭션의 결과는 영구적으로 저장됨.
 
 
-🍕 트랜잭션에 대한 격리성이 낮은 경우 발생할 수 있는 문제점     
-1. Dirty Read : 다른 트랜잭션에 의해 수성되었지만 **아직 커밋되지 않은 데이터**를 읽는 것
-2. Non-Repeatable Read : 한 트랜잭션 내에서 같은 쿼리를 두번 수행했는데, 그 사이에 다른 트랜잭션이 값을 수정 또는 삭제하는 **두 쿼리의 결과가 다르게 나타나는 현상**
-3. Phantom Read : 한 트랜잭션 내에서 같은 쿼리를 두번 수행했는데, 첫번째 쿼리에서 없던 **유령 레코드가 두번째 쿼리에서 나타나는 현상**
+> 🍕 트랜잭션에 대한 격리성이 낮은 경우 발생할 수 있는 문제점     
+> 1. Dirty Read : 다른 트랜잭션에 의해 수성되었지만 **아직 커밋되지 않은 데이터**를 읽는 것
+> 2. Non-Repeatable Read : 한 트랜잭션 내에서 같은 쿼리를 두번 수행했는데, 그 사이에 다른 트랜잭션이 값을 수정 또는 삭제하는 **두 쿼리의 결과가 다르게 나타나는 현상**
+> 3. Phantom Read : 한 트랜잭션 내에서 같은 쿼리를 두번 수행했는데, 첫번째 쿼리에서 없던 **유령 레코드가 두번째 쿼리에서 나타나는 현상**
 
-
-2. TCL
+### 2. TCL
 - 데이터 무결성 보장을 목적으로 함
 - 영구 변경 전 확인과 연관 작업을 동시 처리 가능
 - ORACLE
@@ -163,19 +163,55 @@ CREATE TABLE T2
     - DDL 실행 시 자동 커밋.
     - DB 정상 종료 시 자동 커밋. DB 접속 단절로 종료 시 자동 롤백
 
-3. COMMIT
+### 3. COMMIT
 - 데이터를 DB에 영구적으로 반영하는 명령어
 - 커밋 시 트랜잭션이 완료되어 LOCKING 해제
 - SQL SERVER는 기본적으로 자동 커밋
 - `COMMIT;`
 
-4. ROLLBACK
+### 4. ROLLBACK
 - 트랜잭션 시작 이전의 상태로 되돌림
 - `ROLLBACK TO SAVEPOINT1;`     (ORACLE)
 - `ROLLBACK TRAN SAVEPOINT1;`   (SQL SERVER)
 
-5. SAVEPOINT
+### 5. SAVEPOINT
 - 트랜잭션 저장 지점
 - 트랜잭션 일부만 롤백할 수 있도록 중간 상태를 저장하는 명령어
 - `SAVEPOINT SVPT1;`    (ORACLE)
 - `SAVE TRAN SVPT1;`    (SQL SERVER)
+
+
+## 5절 WHERE
+
+### 1. 연산자
+- 종류
+    1. 비교 연산자
+        - -, =, >, >=, <, <=
+    2. 부정 비교 연산자
+        - NOT 컬럼명 비교연산자
+        - !=. ^=, <>
+    3. SQL 연산자
+        - BETWEEN A AND B
+        - IN (리스트)
+        - LIKE '문자열'
+        - IS NULL
+        - NOT BETWEEN A AND B / NOT IN (리스트) / IS NOT NULL
+    4. 논리연산자
+        - AND, OR, NOT
+- 우선순위
+    - 부정 -> 비교 -> 논리
+    - () -> NOT -> 비교/SQL -> AND -> OR
+
+### 2. 부분 범위 처리
+- ROWNUM
+    - ORACLE SQL 처리 결과 집합의 각 행에 임시로 부여되는 번호
+    - 조건절 내에서 행의 개수를 제한하는 목적으로 사용
+    
+    ```SQL
+    SELECT *
+    FROM ( SELECT ROWNUM AS RNUM
+            FROM TBL01
+            ORDER BY SEQ
+        )
+    WHERE RNUM BETWEEN 1 AND 10;    // SEQ 기준으로 정렬한 데이터를 첫번째~10개 출력.
+    ```
