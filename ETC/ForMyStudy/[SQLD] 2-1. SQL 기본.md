@@ -215,3 +215,56 @@ CREATE TABLE T2
         )
     WHERE RNUM BETWEEN 1 AND 10;    // SEQ 기준으로 정렬한 데이터를 첫번째~10개 출력.
     ```
+
+## 6절 함수
+
+### 1. 단일행 함수
+<-> 다중행 함수(집계함수. 그룹함수. 윈도우함수)     
+
+
+- 문자형 함수
+    - LOWER, UPPER, LENGTH
+    - CONCAT(A, B) : 문자열 결합 -> 'AB'
+    - SUBSTR('문자열', '시작위치', '길이') : 문자열 부분 추출
+    - LTRIM, RTRIM, TRIM : 공백제거
+    - ASCII : 아스키코드값 출력
+- 숫자형 함수
+    - ABS(절대값), SIGN(부호)
+    - MOD : 나머지, 연산 '%'
+    - ROUND(반올림), CEIL(올림), FLOOR(버림) : 함수(E, N) 소수점 이후 N번째 자리까지 출력
+    - TRUNC : 절사
+        1. TRUNC(52.6254, 3) -> 52.625      
+        2. TRUNC(52.6254) -> 52     
+- 날짜형 함수
+    - SYSDATE / GETDATE()
+    - **EXTRACT** : 날짜형 부분 추출 (SQL Server : DATEPART)
+
+    ```SQL
+    SELECT EXTRACT(YEAR FROM SYSDATE) AS YEAR   // 2022
+        , EXTRACT(MONTH FROM SYSDATE) AS MONTH  // 02
+        , EXTRACT(DAY FROM SYSDATE) AS DAY      // 08
+    FROM DUAL;
+    ```
+
+    - **NEXT_DAY(기준일, 'MON')** : 기준일에서 가장 가까운 다음 월요일(월요일/월/MONDAY/MON 모두 가능가능)
+- 변화형 함수
+    - TO_NUMBER, TO_CHAR, TO_DATE
+    - SQL Server : CAST, CONVERT
+- NULL 관련 함수
+    - NVL(C, D) : C에 NULL값이 포함되어있으면 D로 치환
+    - NVL2(C, D1, D2) : C에 NULL값이 포함되어 있으면 D1, 아니면 D2로 치환
+    - COALESCE(D1, D2, ...) : NULL이 아닌 첫 값 출력
+    - ISNULL(C, D) : NULL이면 D로 대치 아니면 C값 출력
+    - IFNULL(C, D) : NULL인 경우 대체값 D, 아니면 C값 출력
+
+    * NULL값이 포함된 연산의 결과값은 모두 NULL     
+        - ex) 1000/NULL -> NULL, NULL+2 -> NULL     
+
+### 2. 데이터 변환
+- 명시적 형변환, 암시적 형변환(DBMS가 자동으로 데이터타입 변환)
+
+### 3. 조건문
+- CASE WHEN 조건절 THEN 출력값 ELSE 기본값 END      
+    - 등호조건. CASE WHEN 컬럼 = 'A'THEN 1 ELSE 0       
+                CASE 컬럼 WHEN 'A' THEN 1 ELSE 0 둘은 같은 결과값을 가진다.     
+- DECODE(COL, 기준값1, 출력값1, ... , 기본값)
