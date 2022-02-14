@@ -159,3 +159,72 @@ FROM TBL1, TBL2;
     - 독립성 : 테이블 구조 변경 자동 반영
     - 편리성 : 쿼리를 단순하게 작성할 수 있음. 자주 사용하는 SQL문의 형태를 뷰로 생성하여 사용가능
     - 보안성 : 뷰를 생성할 때 컬럼을 제외할 수 있음.
+
+## 5절 그룹함수
+
+### 1. ROLLUP
+- GROUP BY로 묶인 컬럼의 소계 계산. 계층 구조로 GROUP BY의 **컬럼 순서가 바뀌면 결과 값 바뀜**
+- GROUP BY ROLLUP(E1, E2) : E1과 E2별 소계 / E1별 소계 / 총 합계
+
+```SQL
+SELECT POSITION, SUM(BONUS) AS SUM
+FROM TBL01
+GROUP BY ROLLUP(POSITION)   // 마지막에 [POSITION]NULL [SUM]TOTAL 데이터 출력
+```
+
+### 2. CUBE
+- 조합 가능한 모든 값에 대해 다차원 집계
+- GROUP BY CUBE(E1, E2) : E1과 E2별 소계 / E1별 소계 / E2별 소계 / 총 합계
+
+### 3. GROUPING SETS
+- 특정 항목에 대한 소계 계산. GROUP BY의 **컬럼 순서와 무관**하게 개별적으로 처리
+- GROUP BY GROUPING SETS (E1, E2) : E1별 소계 / E2별 소계
+
+### GROUPING
+- 그룹 함수에서 생성되는 합계를 구분해주는 함수
+- 소계나 합계가 계산되면 1, 안되면 0 반환
+
+
+## 6절 윈도우 함수
+
+### 1. 윈도우 함수(Window Function)
+: 여러 행 간의 관계를 정의하거나 행과 행간을 비교. 중첩불가         
+
+- 순위 함수
+    1. RANK : 중복 순위 포함
+    2. DENSE_RANK : 중복 순위 무시(중간 순위를 비우지 않음)
+    3. ROW_NUMBER : 단순히 행 번호 표시. 값에 무관하게 고유한 순위 부여
+- 일반집계 함수
+    - SUM, MAX, MIN, AVG, COUNT
+- 행 순서 함수
+    1. FIRST_VALUE / LAST_VALUE : 첫 값 / 끝 값
+    2. LAG / LEAD : 이전 행 / 이후 행(ORACLE)
+
+
+        > 🍕 `LEAD(E, A)` E에서 A번째 행의 값을 호출하는 형태로도 쓰임(A의 기본값은 1)
+
+
+- 비율 관련 함수
+    1. PERCENT_RANK() : 백분율 순서
+    2. CUME_DIST() : 현재 행 이하 값을 포함한 누적 백분율
+    3. NTILE(A) : 전체 데이터 A 등분
+    4. RATIO_TO_PEPORT : 총 합계에 대한 값의 백분율
+
+
+### 2. 문법
+
+```SQL
+SELECT WINDFN(A) 
+OVER (PARTITION BY 컬럼 ORDER BY 컬럼 윈도잉절) 
+FROM TBL;
+```
+
+1. PARTITION BY : 그룹핑 기준
+2. ORDER BY : 순위 지정 기준
+3. 윈도잉절 : 함수의 대상이 되는 행 범위지정
+    - BETWEEN A AND B : 구간지정
+    - N PRECEDING / N FOLLOWING : N번째 앞 행 / N번째 뒤 행
+    - UNBOUNDED PRECEDING / UNBOUNDED FOLLOWING : 첫 행 / 끝 행
+    - CURRENT ROW : 현재 행
+    - ROWS / RANGE : 행 지정 / 값의 범위 지정
+    
