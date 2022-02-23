@@ -227,4 +227,58 @@ FROM TBL;
     - UNBOUNDED PRECEDING / UNBOUNDED FOLLOWING : 첫 행 / 끝 행
     - CURRENT ROW : 현재 행
     - ROWS / RANGE : 행 지정 / 값의 범위 지정
-    
+
+
+## 7절 DCL
+
+### 1. DCL
+: 유저 생성 및 권한 제어 명령어         
+- GRANT : 권한 부여
+    - GRANT 권한 ON 오브젝트 TO 유저명;
+    - **GRANT** SELECT, INSERT **ON** ASDF **TO** HJKL
+- REVOKE : 권한 제거
+    - REVOKE 권한 ON 오브젝트 TO 유저명;
+        - **REVOKE** DELETE **ON** ASDF **TO** HJKL CASCADE
+            - HJKL이 DELETE 권한 부여해준 유저도 DELETE 권한 제거
+
+### 2. 권한 (Privieges)
+- DML 관련 권한 : SELECT, INSERT, UPDATE, DELETE, ALTER ALL
+- REFERENCES : 지정된 테이블을 참조하는 제약조건을 생성하는 권한
+- INDEX : 지정된 테이블에서 인덱스를 생성하는 권한
+
+### 3. ORACLE USER
+- SCOTT : 테스트용 샘플 유저
+- SYS : DBA 권한이 부여된 최상위 유저
+- SYSTEM : DB의 모든 시스템 권한이 부여된 DBA
+
+### 4. ROLE
+: 권한의 집합. 권한을 일일이 부여하지 않고 ROLE로 여러 권한 부여        
+- CONNECT : CREATE SESSION
+- RESOURCE : CREATE CLUSTER / TRIGGER / PROCEDURE / TYPE / TABLE / SEQUENCE / INDEXTYPE
+
+
+## 8절 절차형 SQL
+
+### 1. 절차형 SQL
+- 일반적인 개발 언어처럼 **절차 지향**적인 프로그램을 작성할 수 있또록 제공하는 기능
+- SQL문의 연속적인 실행 및 조건에 따른 분기처리를 이용하여 특정 기능을 수행하는 저장 모듈 생성 가능
+
+
+    - PL/SQL
+        - 블록구조 : 블록 내에 DML, 쿼리, IF, LOOP 등 사용 가능 
+        - **Declare** : **선언부**. 블록에서 사용할 변수나 인수에 대한 정의
+        - **Begin** : **실행부**. 처리할 SQL문 정의
+        - **Exception** : **예외 처리부**. 블록에서 발생한 에러 처리 로직 정의. 선택 항목
+    * PL/SQL에서 동적 SQL OR DDL 문장 실행 시. **_EXECUTE IMMEDIATE_**를 사용해아한다.              
+    EX) EXECUTE IMMEDIATE ' TRUNCATE TABLE TBL1';               
+
+### 2. 프로시저 (Procedure)
+
+### 3. 사용자 정의 함수 (User Defined Function)
+- 절차형 SQL을 로직과 함께 DB 내에 저장해 놓은 명령문 집합
+- **RETURN을 통해 반드시 하나의 값을 반환** (* 프로시저와 다른 점)
+
+### 4. 트리거(Trigger)
+- DML문이 수행되었을 때 자동으로 동작하는 프로그램(* 프로시저는 EXECUTE로 실행)
+- DCL과 TCL 실행 불가 (* 프로시저는 사용 가능)
+- DB에 로그인하는 작업에도 정의 가능
